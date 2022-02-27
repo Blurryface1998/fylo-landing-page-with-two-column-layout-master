@@ -3,7 +3,6 @@
 html {
     font-size: 100%;
     box-sizing: border-box;
-    
 }
 
 *, *::before, *::after {
@@ -14,12 +13,13 @@ html {
 }
 
 body {
-    font-family: var(--font-open-sans);
     display: grid;
     grid-template-areas: 
-    "header header header"
-    "div1 div1 div1"
-    "div2 div2 div2"
-    "div3 div3 div3"
-    "footer footer footer";
+    "header header"
+    "div1 div1"
+    "div2 div2"
+    "div3 div3"
+    "footer footer";
+    font-family: var(--font-open-sans);
+    background: var(--LightGrayishBlue);
 }
