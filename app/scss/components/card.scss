@@ -1,17 +1,11 @@
 @use "../util" as *;
 
-/*  "header header header"
-    "div1 div1 div1"
-    "div2 div2 div2"
-    "div3 div3 div3"
-    "footer footer footer"; 
-    */
 
 .header {
     grid-area: header;
     display: grid;
-    width: 100%;
     grid-template-areas: "logo logo nav";
+    
 
     &__logo {
         grid-area: logo;
@@ -19,24 +13,45 @@
         img {
             max-width: 100%;
             height: auto;
-            padding: rem(15);
+            margin: rem(15);
+        }
+
+        @include breakpoint(large) {
+           margin: rem(20);
         }
     }
 
         &__nav {
         
+            @include breakpoint(large) {
+                margin: rem(20);
+                
+            }
             
         ul {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
 
+            @include breakpoint(large) {
+                justify-content: end;
+            }
+
             li {
             padding: rem(15);
 
+            @include breakpoint(large) {
+                padding: rem(20);
+            }
+
             a {
-                font-size: rem(17);
+                font-size: rem(18);
                 color: var(--VeryDarkBlue);
+
+                @include breakpoint(large) {
+                    font-size: rem(20);
+                }
             }
         }
         }
@@ -45,7 +60,6 @@
 
 .first {
     grid-area: div1;
-    width: 100%;
 
     .card {
         display: flex;
@@ -53,9 +67,16 @@
         align-items: center;
         flex-direction: column;
         flex-wrap: wrap;
-        width: 100%;
+        
+
+        @include breakpoint(large) {
+           flex-direction: row-reverse;
+           flex-wrap: nowrap;
+           align-items:center;
+        }
 
         &__image {
+            margin: rem(10);
                     
         img {
             max-width: 100%;
@@ -63,16 +84,36 @@
             }
         }
 
+        &__test {
+            @include breakpoint(large) {
+                margin: rem(15);
+                padding: 20px;
+            }
+        }
+
         &__heading {
             padding: rem(10);
             margin: rem(15);
+            font-size: rem(19);
+            text-align: center;
+
+            @include breakpoint(large) {
+                font-size: rem(20);
+                text-align: left;
+            }
         }
 
         &__explain {
             padding: rem(10);
             width: 100%;
-            flex-wrap: wrap;
             color: var(--DesaturatedBlue);
+            font-size: rem(19);
+            font-weight: 700;
+
+            @include breakpoint(large) {
+                font-size: rem(18);
+            }
+
             }
 
         &__getstarted {
@@ -81,6 +122,11 @@
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
+
+                @include breakpoint(large) {
+                    flex-direction: row;
+                    justify-content: left;
+                }
                         
                 input[type=email] {
                     align-self: center;
@@ -89,6 +135,8 @@
                     padding: rem(15);
                     width: rem(400);
                     margin: rem(15);
+                    font-size: rem(18);
+                    
                     }
 
                 input[type=button] {
@@ -102,6 +150,10 @@
                     color: var(--LightGrayishBlue);
                     font-size: rem(18);
                     font-weight: 700;
+
+                    @include breakpoint(large) {
+                        width: rem(200);
+                    }
                 }
                 }
             } 
@@ -111,7 +163,6 @@
 
 .second {
     grid-area: div2;
-    width: 100%;
 
     .card {
         display: flex;
@@ -123,6 +174,12 @@
         padding: rem(20);
         margin: rem(20) 0 rem(20) 0;
 
+        @include breakpoint(large) {
+            justify-content: baseline;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+        }
+
         &__image {
             margin-bottom: rem(50);
           
@@ -132,38 +189,55 @@
             }
         }
 
+        &__test2 {
+            @include breakpoint(large) {
+                display: flex;
+                justify-content: left;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
         &__heading {
             padding: rem(10);
             margin: rem(15);
+            font-size: rem(18);
+            text-align: center;
+            color: var(--VeryDarkBlue);
         }
 
         &__explain {
             padding: rem(10);
             text-align: center;
             color: var(--DesaturatedBlue);
+            font-size: rem(18);
+
+            @include breakpoint(large) {
+                text-align: left;
+            }
 
             p {
                 margin-bottom: rem(15);
             }
-            
-           
             }
 
         &__work {
-            
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+
             a {
-                display: flex;
-                justify-content: center;
                 color: var(--ModerateCyan);
                 border-bottom: rem(2) solid var(--ModerateCyan);
                 padding: rem(10);
-                flex-direction: row;
+                font-size: rem(18);
                 
                 
                 img {
-                   margin-left: rem(5);
+                    margin-left: rem(8);
                     max-width: 100%;
                     height: auto;
+                    vertical-align: middle;
                 }
             }
         }
@@ -178,13 +252,21 @@
             border-radius: rem(5);
             background: var(--LightGrayishBlue);
 
+            @include breakpoint(large) {
+                margin-right: rem(50);
+            }
+
             img {
                 max-width: 100%;
                 height: auto;
+                margin-bottom: rem(10);
+                margin-left: rem(5);
             }
             
             p {
+                
                 color: var(--VeryDarkBlue);
+                font-size: rem(18);
             }
 
             .author {
@@ -197,7 +279,6 @@
                    border-radius: 50%;
                    max-width: 100%;
                    height: auto;
-                   
                }
             }
                 .box2{
@@ -208,7 +289,7 @@
                p {
                    margin-bottom: rem(2);
                    text-align: left;
-                   font-size: rem(15);
+                   font-size: rem(16);
                    font-weight: 700;
                    
                }
@@ -225,7 +306,6 @@
 }
 
 .third {
-    width: 100%;
     grid-area: div3;
     background: var(--DesaturatedBlue);
         
@@ -239,13 +319,43 @@
         padding: rem(50) rem(15) rem(50) rem(15);
         color: var(--LightGrayishBlue);
 
+        @include breakpoint(large) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+        }
+
+        &__test3 {
+            @include breakpoint(large) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: rem(20);
+                margin-right: rem(50);
+            }
+        }
+
         &__acces {
             margin-bottom: rem(15);
-            font-size: rem(20);
+            font-size: rem(25);
+            text-align: center;
+
+            @include breakpoint(large) {
+                text-align: left;
+                padding: rem(15);
+            }
         }
 
         &__explain {
             margin-bottom: rem(15);
+            font-size: rem(20);
+            padding: rem(10);
+            text-align: center;
+            
+            @include breakpoint(large) {
+                text-align: left;
+                padding: rem(15);
+            }
         }
 
         form { 
@@ -260,6 +370,11 @@
                 padding: rem(15);
                 width: rem(400);
                 margin: rem(15);
+                font-size: rem(17);
+
+                @include breakpoint(large) {
+                   align-self: baseline;
+                }
                 }
 
             input[type=button] {
@@ -271,8 +386,15 @@
                 align-self: center;
                 background: var(--BrightBlue);
                 color: var(--LightGrayishBlue);
-                font-size: rem(16);
+                font-size: rem(17);
                 font-weight: 700;
+
+                @include breakpoint(large) {
+                    width: rem(200);
+                    align-self: baseline;
+                    font-size: rem(15);
+                    margin-left: rem(17);
+                }
             }
             }
     }
@@ -284,13 +406,31 @@
         width: 100%;
         padding: rem(25);
 
+        @include breakpoint(large) {
+            display: flex;
+            justify-content: baseline;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        &__test4 {
+            @include breakpoint(large) {
+                margin: rem(20);
+            }
+        }
+
         &__logo {
             margin-bottom: rem(20);
+            
+            img {
+                color: var(--LightGrayishBlue);
+            }
         }
 
         &__phone{
-            font-size: rem(15);
+            font-size: rem(17);
             color: var(--LightGrayishBlue);
+
 
             img {
                 max-width: 100%;
@@ -301,7 +441,7 @@
         }
 
         &__mail {
-            font-size: rem(15);
+            font-size: rem(17);
             color: var(--LightGrayishBlue);
 
             img {
@@ -313,12 +453,20 @@
         }
 
         &__nav-first {
+
+            @include breakpoint(large) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: rem(100);
+            }
+
             ul {
                 padding: rem(9);
                 li {
                     padding: rem(5);
                     a {
-                        font-size: rem(17);
+                        font-size: rem(20);
                         color: var(--LightGrayishBlue);
                     }
                 }
@@ -326,12 +474,19 @@
         }
 
         &__nav-second {
+
+            @include breakpoint(large) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: rem(100);
+            }
             ul {
                 padding: rem(9);
                 li {
                     padding: rem(5);
                     a {
-                        font-size: rem(17);
+                        font-size: rem(20);
                         color: var(--LightGrayishBlue);
                     }
                 }
@@ -341,9 +496,29 @@
         &__social {
             text-align: center;
             padding: rem(30);
+
+            @include breakpoint(large) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: rem(50);
+            }
+
+            .facebook {
+                margin: rem(10);
+            }
+
+            .twitter {
+                margin: rem(10);
+            }
+
+            .instagram {
+                margin: rem(10);
+            }
         }
 
         .attribution {
+            text-align: center;
             color: var(--LightGrayishBlue);
         }
     }

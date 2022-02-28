@@ -3,16 +3,17 @@
 html {
     font-size: 100%;
     box-sizing: border-box;
+    max-width: 200vw;
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
     margin: 0;
-    padding: 0;
-  
+    padding: 0;  
 }
 
 body {
+    width: 100%;
     display: grid;
     grid-template-areas: 
     "header header"
