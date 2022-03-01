@@ -2,18 +2,17 @@
 
 
 .header {
-    grid-area: header;
     display: grid;
     grid-template-areas: "logo logo nav";
-    
 
     &__logo {
         grid-area: logo;
-
-        img {
+        
+        .logo {
             max-width: 100%;
             height: auto;
             margin: rem(15);
+            vertical-align: middle;
         }
 
         @include breakpoint(large) {
@@ -22,13 +21,13 @@
     }
 
         &__nav {
-        
             @include breakpoint(large) {
                 margin: rem(20);
                 
             }
             
         ul {
+            vertical-align: middle;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -41,13 +40,20 @@
             li {
             padding: rem(15);
 
+            :hover {
+                color: var(--DesaturatedBlue);
+            }
+
             @include breakpoint(large) {
                 padding: rem(20);
             }
 
             a {
-                font-size: rem(18);
+                vertical-align: middle;
+                font-size: rem(17);
                 color: var(--VeryDarkBlue);
+                
+                
 
                 @include breakpoint(large) {
                     font-size: rem(20);
@@ -58,8 +64,9 @@
     }
     }
 
+   
+
 .first {
-    grid-area: div1;
 
     .card {
         display: flex;
@@ -73,10 +80,10 @@
            flex-direction: row-reverse;
            flex-wrap: nowrap;
            align-items:center;
+           margin: rem(15);
         }
 
         &__image {
-            margin: rem(10);
                     
         img {
             max-width: 100%;
@@ -109,9 +116,11 @@
             color: var(--DesaturatedBlue);
             font-size: rem(19);
             font-weight: 700;
+            text-align: center;
 
             @include breakpoint(large) {
                 font-size: rem(18);
+                text-align: left;
             }
 
             }
@@ -128,7 +137,7 @@
                     justify-content: left;
                 }
                         
-                input[type=email] {
+                input[type="email"] {
                     align-self: center;
                     border: rem(2) solid var( --DesaturatedBlue);
                     border-radius: rem(4);
@@ -139,7 +148,8 @@
                     
                     }
 
-                input[type=button] {
+                a {
+                    align-self: inherit;
                     border: none;
                     border-radius: rem(4);
                     width: rem(400);
@@ -150,16 +160,26 @@
                     color: var(--LightGrayishBlue);
                     font-size: rem(18);
                     font-weight: 700;
+                  
 
                     @include breakpoint(large) {
                         width: rem(200);
                     }
+                }
+
+                a:hover {
+                    background-color: blue;
                 }
                 }
             } 
         }
         
     }
+
+  input[type=email]:invalid {
+      border: 2px solid red;
+      background: pink;
+  }
 
 .second {
     grid-area: div2;
@@ -182,7 +202,7 @@
 
         &__image {
             margin-bottom: rem(50);
-          
+            width: 100%;
             img {
                 max-width: 100%;
                 height: auto;
@@ -225,12 +245,18 @@
             display: flex;
             justify-content: center;
             flex-direction: row;
+         
+            :hover {
+                color: rgba(60, 159, 143, 80%);
+            }
 
             a {
                 color: var(--ModerateCyan);
                 border-bottom: rem(2) solid var(--ModerateCyan);
                 padding: rem(10);
                 font-size: rem(18);
+
+                
                 
                 
                 img {
@@ -371,13 +397,14 @@
                 width: rem(400);
                 margin: rem(15);
                 font-size: rem(17);
+                text-decoration: none;
 
                 @include breakpoint(large) {
                    align-self: baseline;
                 }
                 }
 
-            input[type=button] {
+            a {
                 border: none;
                 border-radius: rem(4);
                 width: rem(400);
@@ -396,11 +423,16 @@
                     margin-left: rem(17);
                 }
             }
+
+            a:hover {
+                background: blue;
+            }
             }
     }
 }
 
     .footer {
+        
         grid-area: footer;
         background: var(--VeryDarkBlue);
         width: 100%;
@@ -465,6 +497,10 @@
                 padding: rem(9);
                 li {
                     padding: rem(5);
+
+                    :hover {
+                        color: var(--DesaturatedBlue);
+                    }
                     a {
                         font-size: rem(20);
                         color: var(--LightGrayishBlue);
@@ -485,6 +521,10 @@
                 padding: rem(9);
                 li {
                     padding: rem(5);
+
+                    :hover {
+                        color: var(--DesaturatedBlue);
+                    }
                     a {
                         font-size: rem(20);
                         color: var(--LightGrayishBlue);
