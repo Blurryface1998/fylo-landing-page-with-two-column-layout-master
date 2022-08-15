@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Fylo landing page with two column layout</title>
@@ -27,7 +26,7 @@
 <header class="container header">
 
   <div class="header__logo">
-    <img class="logo" src="images/logo.svg" alt="Logo" width="140" height="140">
+    <img class="logo" src="images/logo.svg" alt="Logo" width="100" height="100">
   </div>
 
   <nav>
@@ -44,7 +43,7 @@
 <main>
   <section class="container first">
       <div class="card">
-        <img class="card__image" src="images/illustration-1.svg" alt="First illustration" width="400" height="400">
+        <img class="card__image" src="images/illustration-1.svg" alt="First illustration" width="300" height="300">
         <div class="card__test">
         <div class="card__heading">
           <h1>All your files in one secure location, accessible anywhere.</h1>
@@ -59,7 +58,8 @@
             <label for="email"></label>
             <input type="email" name="email" id="email" placeholder="Enter your email..." pattern="^([A-Za-z]|[0-9])+$
             ">
-            <a href="#">Get Started</a>
+            <p class="text-error"></p>
+            <input type="button" value="Get Started">
           </form>
         </div>
       </div>
@@ -67,7 +67,7 @@
 
   <section class="container second">
     <div class="card">
-        <img class="card__image" src="images/illustration-2.svg" alt="Second illustration" width="400" height="400">
+        <img class="card__image" src="images/illustration-2.svg" alt="Second illustration" width="300" height="300">
         <div class="card__test2">
         <div class="card__heading">
           <h2>Stay productive, wherever you are</h2>
@@ -82,7 +82,7 @@
           <a href="#">See how Fylo works<img src="images/icon-arrow.svg" alt="Arrow" width="30" height="30"></a>
         </div>
         <div class="card__comment">
-          <img src="images/icon-quotes.svg" alt="quotes" width="24" height="24">
+          <img src="images/icon-quotes.svg" class="quote" alt="quotes" width="24" height="24">
           <p>Fylo has improved our team productivity by an order of magnitude. Since 
             making the switch our team has become a well-oiled collaboration machine.
           </p>
@@ -115,7 +115,8 @@
         <form action="email2">
           <label for="email"></label>
           <input type="email" name="email" id="email-submit" placeholder="email@example.com">
-          <a href="#">Get Started For Free</a>
+          <p class="text-error"></p>
+          <input type="button" value="Get Started For Free">
         </form>
       </div>
     </div>
@@ -125,7 +126,7 @@
 <footer class="container footer">
   <div class="footer__test4">
   <div class="footer__logo">
-    <img src="images/logo-2.svg" alt="logo" width="200" height="60">
+    <img src="images/logo-2.svg" alt="logo" width="150" height="50">
   </div>
   <div class="footer__phone">
     <img src="images/icon-phone.svg" alt="phone number" width="20" height="20">Phone: +1-543-123-4567
@@ -151,18 +152,12 @@
   </div>
   <div class="footer__social">
 
-    <a href="#"><img class="facebook" src="images/facebook.svg" alt="Facebook" width="40" height="40"></a>
+    <a href="#"><img class="facebook" src="images/facebook.svg" alt="Facebook" width="30" height="30"></a>
     <a href="#">
-    <img class="twitter" src="images/twitter.svg" alt="Twitter" width="40" height="40"></a>
+    <img class="twitter" src="images/twitter.svg" alt="Twitter" width="30" height="30"></a>
     <a href="#">
-    <img class="instagram" src="images/instagram.svg" alt="Instagram" width="40" height="40"></a>
+    <img class="instagram" src="images/instagram.svg" alt="Instagram" width="30" height="30"></a>
   </div>
-
-  <p class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Djordje Rajc</a>.
-  </p>
 </footer>
-
 </body>
 </html>
