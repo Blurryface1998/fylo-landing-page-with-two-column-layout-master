@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://www.frontendmentor.io/solutions/flexbox-swZZNZh0h)
-- Live Site URL: [](https://blurryface1998.github.io/fylo-landing-page-with-two-column-layout-master/)
+- Solution URL: (https://www.frontendmentor.io/solutions/flexbox-swZZNZh0h)
+- Live Site URL: (https://blurryface1998.github.io/fylo-landing-page-with-two-column-layout-master/)
 
 ## My process
 
